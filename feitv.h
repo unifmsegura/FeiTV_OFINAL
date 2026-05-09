@@ -6,39 +6,39 @@
 #include <string.h>
 
 typedef struct {
-    int id;
-    char titulo[50];
-    char categoria[30];
-    char tipo;      // F ou S
-    int duracao;    // filme
-    int temporadas; // série
-    int episodios;  // série
-    int likes;
+	int id;
+	char titulo[50];
+	char categoria[30];
+	char tipo;      // F ou S
+	int duracao;    // filme
+	int temporadas; // series
+	int episodios;  // series
+	int likes;
 } Video;
 
-typedef struct {
-    int id_p;
-    char nome_p[50];
-    int id_u;
-    char lista_videos[100];
+typedef struct{
+	int id_p;
+	char nome_p[50];
+	int id_u;
+	char lista_videos[100];
 } Playlist;
 
-/* menus */
+// menus
 void menuPrincipal();
 void menuUsuario(int idUsuarioLogado);
 
-/* usu?rios */
+// usuarios
 void cadastrarUsuario();
 int realizarLogin();
 int idUsuarioExiste(int id);
 
-/* v?deos */
+// videos
 void buscarVideo(char nomeBusca[]);
 void curtirVideo(int idUsuarioLogado, int idProcurado);
 void descurtirVideo(int idUsuarioLogado, int idProcurado);
 int videoExiste(int idVideo);
 
-/* playlists */
+// playlists
 void listarMinhasPlaylists(int idUsuarioLogado);
 void criarPlaylist(int idUsuarioLogado);
 void adicionarVideoPlaylist(int idPlaylistAlvo, int idNovoVideo, int idUsuarioLogado);
